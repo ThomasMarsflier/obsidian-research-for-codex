@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "obsidian-research",
+  "version": "0.1.0",
+  "description": "Research public web topics and URLs, then save cited notes with separate analysis to Obsidian.",
+  "author": { "name": "ThomasMarsflier" },
+  "homepage": "https://github.com/ThomasMarsflier/obsidian-research-for-codex",
+  "repository": "https://github.com/ThomasMarsflier/obsidian-research-for-codex",
+  "license": "MIT",
+  "keywords": ["obsidian", "research", "web", "notes"],
+  "extensions": {
+    "com.openai": {
+      "requires_local_executor": true,
+      "onboardingSkill": "./skills/setup/SKILL.md",
+      "interface": {
+        "displayName": "Obsidian Research",
+        "shortDescription": "Turn web research into cited Obsidian notes",
+        "longDescription": "Research a topic or public web pages, compare sources, collect permitted high-resolution images, review translations, and create a richly formatted Obsidian note with citations and separate analysis.",
+        "developerName": "ThomasMarsflier",
+        "category": "Productivity",
+        "capabilities": ["Research public web pages", "Download permitted images", "Create Obsidian notes"],
+        "websiteURL": "https://github.com/ThomasMarsflier/obsidian-research-for-codex",
+        "supportURL": "https://github.com/ThomasMarsflier/obsidian-research-for-codex/issues",
+        "privacyPolicyURL": "https://github.com/ThomasMarsflier/obsidian-research-for-codex/blob/main/PRIVACY.md",
+        "defaultPrompt": [
+          "Research this topic and save a sourced note to my Obsidian vault: ",
+          "Summarize this public URL in Obsidian, add your own analysis, and cite the source: "
+        ],
+        "brandColor": "#6F5AA8",
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/logo.png"
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+name: Check plugin
+on:
+  push:
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'
+      - run: python -m unittest discover -s plugins/obsidian-research/tests -v
+      - run: python package.py
+      - run: python -c 'import json,zipfile; p="dist/obsidian-research-0.1.0.zip"; z=zipfile.ZipFile(p); assert "plugin.json" in z.namelist(); json.loads(z.read("plugin.json"))'
